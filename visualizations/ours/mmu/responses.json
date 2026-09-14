@@ -1,0 +1,58 @@
+[
+  {
+    "image": "alpine_lake.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows an elevated view of a clear turquoise alpine lake bordered by dense evergreen forest. A small sandy and rocky peninsula curves into the water on the right, with shrubs and trees growing on it. The lake bottom and submerged stones are visible through the shallow water near the shore. Salient objects include 1 large lake, 1 forested shoreline/peninsula, many trees, and several visible rocks or boulders. There is no clearly visible text.\n"
+  },
+  {
+    "image": "bus.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a red vintage trolley-style bus stopped on a street in front of brick residential buildings and leafy trees. The bus has a white roof, many rectangular windows, and several advertising panels along its side. Salient objects include 1 bus, several side advertisements, about 2 brick houses/buildings in the background, and multiple trees. Clearly visible text includes \"SHARON DRAKE REAL ESTATE\" on the large center ad, plus smaller ads including \"BERT'S\" and a small \"Casino\" mark; some phone-number and website text is present but too small to transcribe confidently.\n"
+  },
+  {
+    "image": "hanjingcenter.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a modern city skyline with a very tall glass skyscraper dominating the right side. The tower has a large white-and-red slogan on its facade, and there are several other high-rise office buildings in the foreground, with hills behind the city. Salient objects include 1 dominant glass skyscraper, 1 nearby Tencent building, many smaller high-rises, and 1 mountain ridge in the background. Clearly visible text includes \"I ♥ SZ\" on the tall tower, \"Tencent\" on the left building, and Chinese text near the top of the tower that appears to read \"汉京集团\".\n"
+  },
+  {
+    "image": "p2277484017.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows an animated sloth character seated at a desk, wearing a green shirt and a striped tie. The sloth is looking down toward a smartphone on the desk, with a white mug and office items nearby. The scene appears to be indoors with a plain brown background. Salient objects include 1 sloth character, 1 desk, 1 smartphone, 1 mug, and several small desk items. Any text on the mug or phone is not clearly legible.\n"
+  },
+  {
+    "image": "p2277484043.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows an animated fox character sitting at a table in a softly lit indoor setting. The fox has reddish-brown fur, a light muzzle, green eyes, and is wearing a green patterned shirt with a blue-and-red striped tie. The background is blurred and suggests a restaurant or office-like interior. Salient objects include 1 fox character, 1 table surface, and background furniture. There is no clearly visible text.\n"
+  },
+  {
+    "image": "pexels-fotios-photos-2923436.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image is a close-up of black printed text on a white or light gray surface. The surface fills nearly the entire frame, with a slight shadow or edge near the top. Salient objects include 1 printed page or sign and 4 lines of text. The visible text reads: \"The moon tells the sky\" / \"The sky tells the sea\" / \"The sea tells the tide\" / \"And the tide tells me\".\n"
+  },
+  {
+    "image": "pexels-jane-pham-727419-1571673.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a soft beige textile laid over a white lace-like surface. The word \"Inspire\" is written in large black cursive on the fabric. Around it are a long black strap or choker with gold-colored metal ends, a small black-and-white pin or button, a small pink flower, and a clear glass bottle lying diagonally at the bottom. Salient objects include 1 textile, 1 black strap, 1 small flower, 1 pin/button, and 1 glass bottle. Clearly visible text: \"Inspire\".\n"
+  },
+  {
+    "image": "pexels-mccutcheon-1148998.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image is a close-up portrait of a person whose face is mostly hidden behind two hands covered in vivid multicolored paint. The paint includes bright green, blue, yellow, red, and purple tones, with a glossy marbled look. The person's eyes are visible between the hands, and the dark background makes the colors stand out. Salient objects include 1 person, 2 painted hands, 1 partially visible face, and many colored paint patches. There is no visible text.\n"
+  },
+  {
+    "image": "pexels-muffin-1558665.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows five wooden letter tiles standing upright on a bed of small stones or pebbles outdoors. The background is blurred greenery and water. Salient objects include 5 wooden tiles and many pebbles. The tiles spell \"CHILL\" from left to right, with visible point values: C3, H4, I1, L1, L1.\n"
+  },
+  {
+    "image": "pexels-pixabay-207983.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows two yellow smiley-face plush toys sitting inside or on top of a small box covered with emoji graphics. The background is softly blurred, likely outdoors with greenery. Salient objects include 2 smiley plush toys, 1 emoji-patterned box, and many printed emoji faces on the box. There is no clearly readable text.\n"
+  },
+  {
+    "image": "pexels-psco-1071882.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a playful party arrangement with pineapples and balloons on a pale background. Three upright pineapples wear cone party hats, and the center pineapple also wears dark sunglasses. A partial pineapple or pineapple crown lies in the left foreground. Large balloons in blue, green, yellow, and purple are visible behind and around the pineapples, with small party blowers near the bottom. Salient objects include 3 upright pineapples, 1 partial foreground pineapple/crown, 3 party hats, 1 pair of sunglasses, several balloons, and 2 party blowers. There is no visible text.\n"
+  },
+  {
+    "image": "pexels-talha-ahmed-26040377-7949588.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a hand holding a folded or wrapped sheet of paper against a bright blue sky with faint clouds. The paper has three horizontal sections with handwritten capital letters. Salient objects include 1 hand, 1 paper sheet, and a sky background. The visible text reads: \"KNOWLEDGE\" / \"IS\" / \"POWER\".\n"
+  },
+  {
+    "image": "pexels-taryn-elliott-4144459.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows avocados arranged on a wooden tabletop. Several whole or mostly whole dark-green avocados are cropped along the left and top edges, while one avocado has been cut into two halves: one half contains the pit and the other has an empty pit cavity. Salient objects include about 4 whole or mostly whole avocados and 2 avocado halves, for roughly 6 visible avocado pieces in total. There is no visible text.\n"
+  },
+  {
+    "image": "pexels-thelazyartist-1117485.jpg",
+    "response": "User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.\n Answer : The image shows a playful view of a person's legs extending out of a blue car window or sunroof area under a bright blue sky. The person is wearing vivid pink socks, and the car's side mirror and body panel are visible in the lower part of the frame. Salient objects include 2 legs/feet, 2 pink socks, 1 blue car, 1 side mirror, and the sky. There is no clearly visible text.\n"
+  }
+]
