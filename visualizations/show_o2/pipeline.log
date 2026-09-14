@@ -1,0 +1,5 @@
+INFO:root:loading /root/autodl-tmp/models/wan21/Wan2.1_VAE.pth
+  0%|          | 0/5 [00:00<?, ?it/s]WARNING:models.modules:The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+ 20%|██        | 1/5 [02:31<10:05, 151.37s/it] 40%|████      | 2/5 [04:13<06:06, 122.12s/it] 60%|██████    | 3/5 [05:00<02:55, 87.97s/it]  80%|████████  | 4/5 [05:47<01:11, 71.99s/it]100%|██████████| 5/5 [06:35<00:00, 63.16s/it]100%|██████████| 5/5 [06:35<00:00, 79.07s/it]
+INFO:root:loading /root/autodl-tmp/models/wan21/Wan2.1_VAE.pth
+  0%|          | 0/14 [00:00<?, ?it/s]  7%|▋         | 1/14 [01:56<25:08, 116.04s/it]Terminated
