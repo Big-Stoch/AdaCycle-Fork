@@ -1,0 +1,21 @@
+id,category,prompt,show_o_image,show_o2_image,ours_image
+1,photorealism,"A cinematic photograph of a small red robot watering sunflowers at sunrise, shallow depth of field, warm backlight.",show_o/t2i/000.png,show_o2/t2i/000.png,ours/t2i/000.png
+2,spatial order,"Three glass spheres arranged from left to right: red, green, and blue, on a white studio table.",show_o/t2i/001.png,show_o2/t2i/001.png,ours/t2i/001.png
+3,illustration,"A fox wearing round glasses reading a book inside a cozy library, detailed watercolor illustration.",show_o/t2i/002.png,show_o2/t2i/002.png,ours/t2i/002.png
+4,text rendering,"A clean poster with the exact words ""SHOW ME THE FUTURE"" in large bold blue letters on a cream background.",show_o/t2i/003.png,show_o2/t2i/003.png,ours/t2i/003.png
+5,surreal composition,"An astronaut riding a white horse across a lavender field under two moons, surreal photography.",show_o/t2i/004.png,show_o2/t2i/004.png,ours/t2i/004.png
+6,object counting,A top-down photograph of exactly five yellow lemons and two green limes on a dark wooden table.,show_o/t2i/005.png,show_o2/t2i/005.png,ours/t2i/005.png
+7,product photo,"A transparent glass teapot filled with jasmine tea beside a folded linen napkin, product photography.",show_o/t2i/006.png,show_o2/t2i/006.png,ours/t2i/006.png
+8,complex scene,"A futuristic eco-friendly city built into steep green cliffs, waterfalls, flying buses, panoramic concept art.",show_o/t2i/007.png,show_o2/t2i/007.png,ours/t2i/007.png
+9,reflection,"A tiny origami boat floating in a rain puddle that reflects neon city signs at night, macro photography.",show_o/t2i/008.png,show_o2/t2i/008.png,ours/t2i/008.png
+10,character,"A friendly corgi chef preparing noodles in a busy open kitchen, expressive digital illustration.",show_o/t2i/009.png,show_o2/t2i/009.png,ours/t2i/009.png
+11,diagram,"A minimalist scientific diagram of the water cycle with clouds, rain, a river, and arrows, labeled clearly.",show_o/t2i/010.png,show_o2/t2i/010.png,ours/t2i/010.png
+12,spatial relation,"A red cube behind a blue sphere and a yellow pyramid in front of both, isometric 3D render.",show_o/t2i/011.png,show_o2/t2i/011.png,ours/t2i/011.png
+13,scene text,"A traditional Chinese street at night with a glowing sign that reads ""OPEN 24 HOURS"", cinematic scene.",show_o/t2i/012.png,show_o2/t2i/012.png,ours/t2i/012.png
+14,wildlife,"A snow leopard standing on a rocky ridge during a blizzard, wildlife photography, dramatic lighting.",show_o/t2i/013.png,show_o2/t2i/013.png,ours/t2i/013.png
+15,creative concept,"A bowl of ramen shaped like a small planet, with rings made of noodles and vegetable satellites, food art.",show_o/t2i/014.png,show_o2/t2i/014.png,ours/t2i/014.png
+16,typography,"A vintage travel postcard of Mars with the exact title ""VISIT MARS"", retro 1960s screen-print style.",show_o/t2i/015.png,show_o2/t2i/015.png,ours/t2i/015.png
+17,documentary,"An elderly watchmaker repairing a mechanical clock in a workshop filled with brass gears, documentary photograph.",show_o/t2i/016.png,show_o2/t2i/016.png,ours/t2i/016.png
+18,fantasy,"A bioluminescent jellyfish forest beneath the ocean, cyan and violet light, wide-angle fantasy art.",show_o/t2i/017.png,show_o2/t2i/017.png,ours/t2i/017.png
+19,hands,"Two hands carefully holding a delicate crystal butterfly, soft natural light, high-detail close-up.",show_o/t2i/018.png,show_o2/t2i/018.png,ours/t2i/018.png
+20,split scene,A split architectural visualization showing the same modern cabin in summer on the left and winter on the right.,show_o/t2i/019.png,show_o2/t2i/019.png,ours/t2i/019.png

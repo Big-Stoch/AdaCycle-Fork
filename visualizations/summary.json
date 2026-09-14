@@ -1,0 +1,33 @@
+{
+  "shared_prompts": 20,
+  "mmu_inputs": 14,
+  "models": {
+    "show_o": {
+      "label": "Show-O",
+      "checkpoint": "showlab/show-o-512x512",
+      "resolution": "512x512",
+      "t2i_images": 20,
+      "mmu_responses": 14
+    },
+    "show_o2": {
+      "label": "Show-O2",
+      "checkpoint": "showlab/show-o2-7B",
+      "resolution": "432x432",
+      "t2i_images": 20,
+      "mmu_responses": 14
+    },
+    "ours": {
+      "label": "Ours",
+      "checkpoint": "Ours output set",
+      "resolution": "tool default, varies by output",
+      "t2i_images": 20,
+      "mmu_responses": 14
+    }
+  },
+  "contact_sheets": {
+    "show_o": "show_o_contact_sheet.jpg",
+    "show_o2": "show_o2_contact_sheet.jpg",
+    "ours_t2i": "ours_t2i_contact_sheet.jpg",
+    "ours_mmu": "ours_mmu_contact_sheet.jpg"
+  }
+}

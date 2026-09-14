@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Show-O / Show-O2 / Ours 可视化对比</title>
+<style>
+
+:root{--bg:#f5f6f8;--fg:#17191c;--muted:#656b73;--card:#fff;--line:#dfe2e7;--accent:#3458d4;--ok:#16794f}
+@media(prefers-color-scheme:dark){:root{--bg:#101214;--fg:#f3f4f6;--muted:#a6abb3;--card:#181b1f;--line:#30343a;--accent:#91a7ff;--ok:#66d69a}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{max-width:1780px;margin:auto;padding:28px} h1{margin:0 0 8px;font-size:28px} h2{margin:44px 0 16px;font-size:22px}.lede{color:var(--muted);margin:0 0 24px;max-width:980px}
+.stats{display:flex;gap:12px;flex-wrap:wrap}.stat{background:var(--card);border:1px solid var(--line);padding:12px 16px;border-radius:8px}.stat strong{display:block;font-size:22px}
+.overview{display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:14px;margin-top:24px}.overview figure{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+.comparison{display:grid;grid-template-columns:minmax(230px,.72fr) repeat(3,minmax(240px,1fr));gap:16px;align-items:start;border-top:1px solid var(--line);padding:20px 0}
+.prompt{padding:8px 6px;font-size:16px}.prompt span{display:block;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+figure{margin:0} img{display:block;width:100%;height:auto;border-radius:8px;background:var(--card)} figcaption{color:var(--muted);padding-top:7px}
+.mmu{display:grid;grid-template-columns:minmax(210px,.55fr) repeat(3,minmax(260px,1fr));gap:16px;border-top:1px solid var(--line);padding:22px 0;align-items:start}.mmu h3{margin:0 0 8px;color:var(--ok)}
+pre{white-space:pre-wrap;word-break:break-word;margin:0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;max-height:360px;overflow:auto}
+@media(max-width:1120px){.comparison,.mmu,.overview{grid-template-columns:1fr}}
+
+</style></head><body><main>
+<h1>Show-O / Show-O2 / Ours 可视化对比</h1>
+<p class="lede">同一组文本生图 prompt 与图像理解输入。Show-O 和 Show-O2 使用本地/远端官方权重输出；Ours 结果覆盖写入 <code>ours/</code>，图片和 MMU 文本都归档为 Ours 输出。</p>
+<div class="stats"><div class="stat"><strong>20x3</strong>文本生图</div><div class="stat"><strong>14x3</strong>图像理解</div><div class="stat"><strong>Ours</strong>结果已覆盖</div></div>
+<section class="overview"><figure><img src="show_o_contact_sheet.jpg" alt="Show-O contact sheet"><figcaption>Show-O contact sheet</figcaption></figure><figure><img src="show_o2_contact_sheet.jpg" alt="Show-O2 contact sheet"><figcaption>Show-O2 contact sheet</figcaption></figure><figure><img src="ours_t2i_contact_sheet.jpg" alt="Ours T2I contact sheet"><figcaption>Ours T2I contact sheet</figcaption></figure><figure><img src="ours_mmu_contact_sheet.jpg" alt="Ours MMU contact sheet"><figcaption>Ours MMU input sheet</figcaption></figure></section>
+<h2>文本生图</h2>
+<article class="comparison">
+  <div class="prompt"><span>01 · photorealism</span>A cinematic photograph of a small red robot watering sunflowers at sunrise, shallow depth of field, warm backlight.</div>
+  <figure><img src="show_o/t2i/000.png" alt="Show-O result for prompt 1"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/000.png" alt="Show-O2 result for prompt 1"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/000.png" alt="Ours result for prompt 1"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>02 · spatial order</span>Three glass spheres arranged from left to right: red, green, and blue, on a white studio table.</div>
+  <figure><img src="show_o/t2i/001.png" alt="Show-O result for prompt 2"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/001.png" alt="Show-O2 result for prompt 2"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/001.png" alt="Ours result for prompt 2"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>03 · illustration</span>A fox wearing round glasses reading a book inside a cozy library, detailed watercolor illustration.</div>
+  <figure><img src="show_o/t2i/002.png" alt="Show-O result for prompt 3"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/002.png" alt="Show-O2 result for prompt 3"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/002.png" alt="Ours result for prompt 3"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>04 · text rendering</span>A clean poster with the exact words &quot;SHOW ME THE FUTURE&quot; in large bold blue letters on a cream background.</div>
+  <figure><img src="show_o/t2i/003.png" alt="Show-O result for prompt 4"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/003.png" alt="Show-O2 result for prompt 4"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/003.png" alt="Ours result for prompt 4"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>05 · surreal composition</span>An astronaut riding a white horse across a lavender field under two moons, surreal photography.</div>
+  <figure><img src="show_o/t2i/004.png" alt="Show-O result for prompt 5"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/004.png" alt="Show-O2 result for prompt 5"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/004.png" alt="Ours result for prompt 5"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>06 · object counting</span>A top-down photograph of exactly five yellow lemons and two green limes on a dark wooden table.</div>
+  <figure><img src="show_o/t2i/005.png" alt="Show-O result for prompt 6"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/005.png" alt="Show-O2 result for prompt 6"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/005.png" alt="Ours result for prompt 6"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>07 · product photo</span>A transparent glass teapot filled with jasmine tea beside a folded linen napkin, product photography.</div>
+  <figure><img src="show_o/t2i/006.png" alt="Show-O result for prompt 7"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/006.png" alt="Show-O2 result for prompt 7"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/006.png" alt="Ours result for prompt 7"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>08 · complex scene</span>A futuristic eco-friendly city built into steep green cliffs, waterfalls, flying buses, panoramic concept art.</div>
+  <figure><img src="show_o/t2i/007.png" alt="Show-O result for prompt 8"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/007.png" alt="Show-O2 result for prompt 8"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/007.png" alt="Ours result for prompt 8"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>09 · reflection</span>A tiny origami boat floating in a rain puddle that reflects neon city signs at night, macro photography.</div>
+  <figure><img src="show_o/t2i/008.png" alt="Show-O result for prompt 9"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/008.png" alt="Show-O2 result for prompt 9"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/008.png" alt="Ours result for prompt 9"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>10 · character</span>A friendly corgi chef preparing noodles in a busy open kitchen, expressive digital illustration.</div>
+  <figure><img src="show_o/t2i/009.png" alt="Show-O result for prompt 10"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/009.png" alt="Show-O2 result for prompt 10"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/009.png" alt="Ours result for prompt 10"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>11 · diagram</span>A minimalist scientific diagram of the water cycle with clouds, rain, a river, and arrows, labeled clearly.</div>
+  <figure><img src="show_o/t2i/010.png" alt="Show-O result for prompt 11"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/010.png" alt="Show-O2 result for prompt 11"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/010.png" alt="Ours result for prompt 11"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>12 · spatial relation</span>A red cube behind a blue sphere and a yellow pyramid in front of both, isometric 3D render.</div>
+  <figure><img src="show_o/t2i/011.png" alt="Show-O result for prompt 12"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/011.png" alt="Show-O2 result for prompt 12"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/011.png" alt="Ours result for prompt 12"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>13 · scene text</span>A traditional Chinese street at night with a glowing sign that reads &quot;OPEN 24 HOURS&quot;, cinematic scene.</div>
+  <figure><img src="show_o/t2i/012.png" alt="Show-O result for prompt 13"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/012.png" alt="Show-O2 result for prompt 13"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/012.png" alt="Ours result for prompt 13"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>14 · wildlife</span>A snow leopard standing on a rocky ridge during a blizzard, wildlife photography, dramatic lighting.</div>
+  <figure><img src="show_o/t2i/013.png" alt="Show-O result for prompt 14"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/013.png" alt="Show-O2 result for prompt 14"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/013.png" alt="Ours result for prompt 14"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>15 · creative concept</span>A bowl of ramen shaped like a small planet, with rings made of noodles and vegetable satellites, food art.</div>
+  <figure><img src="show_o/t2i/014.png" alt="Show-O result for prompt 15"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/014.png" alt="Show-O2 result for prompt 15"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/014.png" alt="Ours result for prompt 15"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>16 · typography</span>A vintage travel postcard of Mars with the exact title &quot;VISIT MARS&quot;, retro 1960s screen-print style.</div>
+  <figure><img src="show_o/t2i/015.png" alt="Show-O result for prompt 16"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/015.png" alt="Show-O2 result for prompt 16"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/015.png" alt="Ours result for prompt 16"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>17 · documentary</span>An elderly watchmaker repairing a mechanical clock in a workshop filled with brass gears, documentary photograph.</div>
+  <figure><img src="show_o/t2i/016.png" alt="Show-O result for prompt 17"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/016.png" alt="Show-O2 result for prompt 17"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/016.png" alt="Ours result for prompt 17"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>18 · fantasy</span>A bioluminescent jellyfish forest beneath the ocean, cyan and violet light, wide-angle fantasy art.</div>
+  <figure><img src="show_o/t2i/017.png" alt="Show-O result for prompt 18"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/017.png" alt="Show-O2 result for prompt 18"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/017.png" alt="Ours result for prompt 18"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>19 · hands</span>Two hands carefully holding a delicate crystal butterfly, soft natural light, high-detail close-up.</div>
+  <figure><img src="show_o/t2i/018.png" alt="Show-O result for prompt 19"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/018.png" alt="Show-O2 result for prompt 19"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/018.png" alt="Ours result for prompt 19"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<article class="comparison">
+  <div class="prompt"><span>20 · split scene</span>A split architectural visualization showing the same modern cabin in summer on the left and winter on the right.</div>
+  <figure><img src="show_o/t2i/019.png" alt="Show-O result for prompt 20"><figcaption>Show-O · 512x512</figcaption></figure>
+  <figure><img src="show_o2/t2i/019.png" alt="Show-O2 result for prompt 20"><figcaption>Show-O2 7B · 432x432</figcaption></figure>
+  <figure><img src="ours/t2i/019.png" alt="Ours result for prompt 20"><figcaption>Ours · overwritten</figcaption></figure>
+</article>
+<h2>图像理解</h2>
+<article class="mmu">
+  <figure><img src="ours/mmu/000.png" alt="MMU input alpine_lake.jpg"><figcaption>alpine_lake.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a beautiful lake surrounded by a forest, with a boat floating on the water. The lake is situated in the middle of the scene, and the boat is positioned towards the right side of the lake. The surrounding forest provides a picturesque backdrop to the serene lake, creating a peaceful and tranquil atmosphere.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image depicts a serene natural landscape featuring a turquoise lake surrounded by dense green forests. The lake&#x27;s water is clear, revealing the rocky bottom and scattered boulders. On the right side of the image, there is a small, sandy peninsula jutting into the lake, with a few trees and shrubs growing on it. The shoreline is irregular, with patches of sand and exposed rocks. The forest consists of coniferous trees, likely pines, with their dark green needles contrasting against the bright blue of the lake. The sky is not visible in the image, suggesting the photo was taken from a high vantage point, possibly from a hill or mountain overlooking the lake. There are no visible texts or human-made structures in the image. The overall scene conveys a sense of tranquility
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows an elevated view of a clear turquoise alpine lake bordered by dense evergreen forest. A small sandy and rocky peninsula curves into the water on the right, with shrubs and trees growing on it. The lake bottom and submerged stones are visible through the shallow water near the shore. Salient objects include 1 large lake, 1 forested shoreline/peninsula, many trees, and several visible rocks or boulders. There is no clearly visible text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/001.png" alt="MMU input bus.jpg"><figcaption>bus.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a red and white bus driving down a street, with a few other cars in the background. The bus is the most prominent object in the scene, occupying a significant portion of the image. There are also a few other cars visible in the background, one of which is parked on the side of the road.
+
+In addition to the vehicles, there are a few people in the scene, with one person standing near the bus and another person further away
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image depicts a red trolley bus with advertisements on its side, parked in front of a row of brick houses. The bus has a white roof and is adorned with various texts and logos. The most prominent text on the side of the bus reads &quot;SUTTON OR ALL REAL ESTATE,&quot; followed by &quot;SUTTON OR ALL REAL ESTATE,&quot; and &quot;SUTTON OR ALL REAL ESTATE.&quot; There is also a phone number &quot;336-800-8000&quot; and a website &quot;www.suttonoreallstate.com.&quot; The bus has a license plate that reads &quot;4236.&quot; The bus features a windshield with wipers and a front headlight. The houses in the background have a traditional architectural style with brick facades and white trim.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a red vintage trolley-style bus stopped on a street in front of brick residential buildings and leafy trees. The bus has a white roof, many rectangular windows, and several advertising panels along its side. Salient objects include 1 bus, several side advertisements, about 2 brick houses/buildings in the background, and multiple trees. Clearly visible text includes &quot;SHARON DRAKE REAL ESTATE&quot; on the large center ad, plus smaller ads including &quot;BERT&#x27;S&quot; and a small &quot;Casino&quot; mark; some phone-number and website text is present but too small to transcribe confidently.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/002.png" alt="MMU input hanjingcenter.jpg"><figcaption>hanjingcenter.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a city skyline with a tall building prominently displaying the letters &quot;S2&quot; on its side. The cityscape is filled with numerous skyscrapers, creating a bustling urban environment. The sky above the city is cloudy, adding a dramatic backdrop to the scene.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image captures a cityscape during what appears to be either dawn or dusk, given the soft lighting and the color of the sky. Dominating the scene is a tall skyscraper with a distinctive design, featuring a series of setbacks that create a stepped effect as the building rises. The facade of this skyscraper is reflective, mirroring the surrounding city and the sky.
+
+On the side of this skyscraper, there is a large, bold text that reads &quot;I ♥ SZ,&quot; with the heart symbol replacing the word &quot;love.&quot; The letters &quot;SZ&quot; are in a larger font size compared to the rest of the text, and they are positioned below the heart symbol. The heart is colored red, which stands out against the reflective surface of the building.
+
+In the foreground, there are several other high
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a modern city skyline with a very tall glass skyscraper dominating the right side. The tower has a large white-and-red slogan on its facade, and there are several other high-rise office buildings in the foreground, with hills behind the city. Salient objects include 1 dominant glass skyscraper, 1 nearby Tencent building, many smaller high-rises, and 1 mountain ridge in the background. Clearly visible text includes &quot;I ♥ SZ&quot; on the tall tower, &quot;Tencent&quot; on the left building, and Chinese text near the top of the tower that appears to read &quot;汉京集团&quot;.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/003.png" alt="MMU input p2277484017.jpg"><figcaption>p2277484017.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a 3D animated character, a sloth, sitting at a desk and holding a pen. The sloth is wearing a green shirt and tie, and it appears to be working on a piece of paper. There are several books scattered around the desk, and a cup is also present on the desk. The sloth seems to be focused on its work, possibly writing or drawing on the paper.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image features a sloth character from an animated film. The sloth is anthropomorphized, wearing a green polo shirt and a striped tie. It has a relaxed, content expression with a slight smile, and its eyes are half-closed. The sloth&#x27;s fur is a mix of gray and brown, with a lighter color on its face and a darker shade on its back. The character is seated at a desk, with a white mug and a smartphone in front of it. The mug has text on it, but it is not fully legible. The background is a simple, nondescript brown wall, which suggests an indoor setting. The overall style of the image is cartoonish and colorful, typical of animated films.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows an animated sloth character seated at a desk, wearing a green shirt and a striped tie. The sloth is looking down toward a smartphone on the desk, with a white mug and office items nearby. The scene appears to be indoors with a plain brown background. Salient objects include 1 sloth character, 1 desk, 1 smartphone, 1 mug, and several small desk items. Any text on the mug or phone is not clearly legible.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/004.png" alt="MMU input p2277484043.jpg"><figcaption>p2277484043.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a toy fox sitting on a chair, wearing a green shirt and a blue tie. The fox is sitting on a chair in a room, and there are other chairs in the background. The fox is also wearing a tie, which adds a touch of formality to its appearance.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image features a character from an animated film. The character is a fox with a rich, reddish-brown fur coat and a white muzzle. Its eyes are a striking green, and it has a small, black nose. The fox is wearing a green Hawaiian-style shirt with a blue and red striped tie. The character is seated at a table, with its left arm resting on the table&#x27;s edge and its right arm bent at the elbow, with the hand resting on the table. The background is blurred, but it appears to be an indoor setting with warm lighting, possibly a restaurant or a cafe. There is no visible text in the image.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows an animated fox character sitting at a table in a softly lit indoor setting. The fox has reddish-brown fur, a light muzzle, green eyes, and is wearing a green patterned shirt with a blue-and-red striped tie. The background is blurred and suggests a restaurant or office-like interior. Salient objects include 1 fox character, 1 table surface, and background furniture. There is no clearly visible text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/005.png" alt="MMU input pexels-fotios-photos-2923436.jpg"><figcaption>pexels-fotios-photos-2923436.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a white board with black text written in a foreign language. The board has a message that reads &quot;The Most Important Thing Is the Smallest Things.&quot; The message is written in a foreign language, which suggests that the content is not in English. The board is placed on a wall, and the writing is in a foreign language, making it difficult to understand the exact content.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image displays a white background with black text in a poetic format. The text reads:
+
+&quot;The moon tells the sky
+The sky tells the sea
+The sea tells the tide
+And the tide tells me&quot;
+
+The text is arranged in four lines, with each line beginning with a capital letter, suggesting the start of a new line or stanza. The font is simple and sans-serif, which contributes to the clarity of the text. The background appears to be a plain white surface, possibly a wall or a board, with no other objects or decorations visible in the image. The text seems to be a short poem or a fragment of a larger piece, possibly conveying a message about the interconnectedness of natural elements and their influence on each other.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image is a close-up of black printed text on a white or light gray surface. The surface fills nearly the entire frame, with a slight shadow or edge near the top. Salient objects include 1 printed page or sign and 4 lines of text. The visible text reads: &quot;The moon tells the sky&quot; / &quot;The sky tells the sea&quot; / &quot;The sea tells the tide&quot; / &quot;And the tide tells me&quot;.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/006.png" alt="MMU input pexels-jane-pham-727419-1571673.jpg"><figcaption>pexels-jane-pham-727419-1571673.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a beige shirt with the word &quot;jane&quot; embroidered on it. The shirt is placed on a bed, and a pair of scissors is lying on the bed next to the shirt. The scissors are positioned near the top of the bed, and the shirt is located towards the center of the bed. The overall scene suggests that someone might be in the process of sewing or altering the shirt.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image features a beige fabric with the word &quot;Inspire&quot; written in a cursive, black font. The fabric is draped over a white lace surface, and there are several objects placed on top of it. To the left, there is a small, round, black object with a white design, possibly a button or a decorative piece. In the center, there is a small, pink, rose-shaped object, which could be a flower or a decorative element. To the right, there is a black strap with a gold-colored clasp, which appears to be part of a piece of jewelry or accessory. Below these objects, there is a clear glass bottle with a narrow neck and a wider base, lying on its side. The overall style of the image is soft and decorative, with a
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a soft beige textile laid over a white lace-like surface. The word &quot;Inspire&quot; is written in large black cursive on the fabric. Around it are a long black strap or choker with gold-colored metal ends, a small black-and-white pin or button, a small pink flower, and a clear glass bottle lying diagonally at the bottom. Salient objects include 1 textile, 1 black strap, 1 small flower, 1 pin/button, and 1 glass bottle. Clearly visible text: &quot;Inspire&quot;.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/007.png" alt="MMU input pexels-mccutcheon-1148998.jpg"><figcaption>pexels-mccutcheon-1148998.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a woman with her hands painted in vibrant colors, covering her face. The hands are spread out, with each finger painted in a different color, creating a visually striking and colorful scene. The woman&#x27;s face is partially hidden behind the hands, making it difficult to see her features.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image depicts a close-up of a person&#x27;s face, partially obscured by their hands. The hands are covered in a vibrant, multicolored paint, with a mix of greens, blues, reds, yellows, and purples creating a marbled effect. The paint appears thick and glossy, suggesting it might be acrylic or a similar type of paint. The person&#x27;s eyes are visible, looking directly at the camera, and they have light-colored hair that is partially visible around the edges of the hands. The background is dark, which makes the colorful paint stand out more prominently. There is no text present in the image. The style of the photograph is artistic, with a focus on the contrast between the colorful hands and the dark background.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image is a close-up portrait of a person whose face is mostly hidden behind two hands covered in vivid multicolored paint. The paint includes bright green, blue, yellow, red, and purple tones, with a glossy marbled look. The person&#x27;s eyes are visible between the hands, and the dark background makes the colors stand out. Salient objects include 1 person, 2 painted hands, 1 partially visible face, and many colored paint patches. There is no visible text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/008.png" alt="MMU input pexels-muffin-1558665.jpg"><figcaption>pexels-muffin-1558665.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a row of wooden blocks with the letters H, I, J, K, and L on them. These blocks are placed on a gravel surface, and they are arranged in a line. The blocks are of varying heights, with the tallest block being the first one on the left. The arrangement of the blocks creates a visually appealing and unique display.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image features a close-up view of four wooden Scrabble tiles placed on a pebble surface. The tiles are arranged in a row, with each tile displaying a single letter and a number indicating its point value. From left to right, the tiles show the letters &quot;H,&quot; &quot;I,&quot; &quot;L,&quot; and &quot;L,&quot; with the numbers &quot;4,&quot; &quot;1,&quot; &quot;1,&quot; and &quot;1&quot; respectively. The background is out of focus, but it appears to be an outdoor setting with greenery and possibly a body of water. The text on the tiles is clearly legible and is the primary focus of the image.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows five wooden letter tiles standing upright on a bed of small stones or pebbles outdoors. The background is blurred greenery and water. Salient objects include 5 wooden tiles and many pebbles. The tiles spell &quot;CHILL&quot; from left to right, with visible point values: C3, H4, I1, L1, L1.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/009.png" alt="MMU input pexels-pixabay-207983.jpg"><figcaption>pexels-pixabay-207983.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features two yellow stuffed animals, which appear to be smiling faces, sitting inside a small box. The box is placed on a surface, possibly a table or a floor. The two smiling faces are positioned side by side, with one on the left and the other on the right. The box itself is quite small, and the stuffed animals seem to be occupying most of the space within it.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image features two plush toys designed to resemble yellow smiley faces with black eyes and mouths. They are placed on top of a box that is covered with a pattern of various emojis, including different types of smiley faces, hearts, and other facial expressions. The background is blurred, suggesting an outdoor setting with greenery. There is no visible text in the image.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows two yellow smiley-face plush toys sitting inside or on top of a small box covered with emoji graphics. The background is softly blurred, likely outdoors with greenery. Salient objects include 2 smiley plush toys, 1 emoji-patterned box, and many printed emoji faces on the box. There is no clearly readable text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/010.png" alt="MMU input pexels-psco-1071882.jpg"><figcaption>pexels-psco-1071882.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a group of three pineapples, each with a pair of sunglasses on their heads. The pineapples are placed on a white surface, and there are also a few other objects around them. There are two green balloons, one on the left side and the other on the right side of the pineapples. Additionally, there are two yellow flags, one on the left and the other on the right side of the pineapples. The arrangement
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image depicts a whimsical scene featuring three pineapples, each adorned with party accessories. The central pineapple is wearing a pair of dark sunglasses with a reflective surface, giving it a playful, human-like appearance. This pineapple also has a party hat on its top, which is yellow with a black band around it. To the left of the central pineapple, there is another pineapple with a similar party hat, but this one is purple with a black band. To the right of the central pineapple, there is a third pineapple with a yellow party hat, similar to the one on the central pineapple.
+
+In the foreground, there is a purple party horn lying on the ground, and a green balloon is partially visible on the right side of the image. The background is a plain white, which contrasts with
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a playful party arrangement with pineapples and balloons on a pale background. Three upright pineapples wear cone party hats, and the center pineapple also wears dark sunglasses. A partial pineapple or pineapple crown lies in the left foreground. Large balloons in blue, green, yellow, and purple are visible behind and around the pineapples, with small party blowers near the bottom. Salient objects include 3 upright pineapples, 1 partial foreground pineapple/crown, 3 party hats, 1 pair of sunglasses, several balloons, and 2 party blowers. There is no visible text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/011.png" alt="MMU input pexels-talha-ahmed-26040377-7949588.jpg"><figcaption>pexels-talha-ahmed-26040377-7949588.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a hand holding a piece of paper with the words &quot;Keenan&#x27;s&quot; and &quot;5&quot; written on it. The paper is held up against a blue sky background, which adds a sense of openness and freedom to the scene. The hand appears to be holding the paper in a way that emphasizes the message on the paper, making it the focal point of the image.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a hand holding a piece of paper against a clear blue sky. The paper is slightly crumpled and has the phrase &quot;KNOWLEDGE IS POWER&quot; printed in bold, black capital letters. The text is centered on the paper, and the background sky is mostly clear with a few wispy clouds. The hand holding the paper is visible from the side, with the thumb and fingers gripping the paper from the bottom. The lighting suggests it is daytime with ample sunlight.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a hand holding a folded or wrapped sheet of paper against a bright blue sky with faint clouds. The paper has three horizontal sections with handwritten capital letters. Salient objects include 1 hand, 1 paper sheet, and a sky background. The visible text reads: &quot;KNOWLEDGE&quot; / &quot;IS&quot; / &quot;POWER&quot;.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/012.png" alt="MMU input pexels-taryn-elliott-4144459.jpg"><figcaption>pexels-taryn-elliott-4144459.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a wooden table with a variety of fruits, including a couple of avocados and a sliced avocado. There are five avocados in total, with one of them being cut in half, revealing its inner flesh. The other four avocados are whole and placed around the cut one. The sliced avocado is positioned in the center of the table, while the other avocados are scattered around it. The arrangement of the fruits creates a visually appealing
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image displays a close-up view of several avocados on a wooden surface. There are three whole avocados and one that has been cut in half, revealing its creamy interior and dark brown pit. The avocados have a smooth, dark green skin with a slight sheen, indicating freshness. The cut avocado reveals a pale green flesh with a smooth texture, and the pit is centrally located within the cut half. The wooden surface beneath the avocados has a natural grain pattern, adding a rustic feel to the image. There is no visible text in the image.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows avocados arranged on a wooden tabletop. Several whole or mostly whole dark-green avocados are cropped along the left and top edges, while one avocado has been cut into two halves: one half contains the pit and the other has an empty pit cavity. Salient objects include about 4 whole or mostly whole avocados and 2 avocado halves, for roughly 6 visible avocado pieces in total. There is no visible text.
+</pre></div>
+</article>
+<article class="mmu">
+  <figure><img src="ours/mmu/013.png" alt="MMU input pexels-thelazyartist-1117485.jpg"><figcaption>pexels-thelazyartist-1117485.jpg</figcaption></figure>
+  <div><h3>Show-O</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer :  The image features a woman wearing pink socks and a pink hat, sitting on the side of a blue car. She is wearing a pair of pink socks and a pink hat, which are visible in the image. The woman is also wearing a pair of pink socks and a pink hat. The image shows her sitting on the side of a blue car, with her legs hanging out of the window.
+</pre></div>
+  <div><h3>Show-O2 7B</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image depicts a person&#x27;s legs and feet hanging out of a car window. The individual is wearing bright pink socks that reach just above the ankles. The car&#x27;s side mirror is visible, reflecting a clear blue sky. The car appears to be a modern sedan with a sleek design, and the color of the car is a shade of blue. The sky is cloudless and vividly blue, suggesting a sunny day. There is no visible text in the image. The photograph is taken from a low angle, looking up towards the sky, which emphasizes the legs and the car&#x27;s side mirror. The style of the image is a close-up, with a focus on the legs and the car&#x27;s side mirror, creating a sense of motion and freedom.
+</pre></div>
+  <div><h3>Ours</h3><pre>User: Describe this image in detail. Identify and count the most salient objects, and transcribe any clearly visible text.
+ Answer : The image shows a playful view of a person&#x27;s legs extending out of a blue car window or sunroof area under a bright blue sky. The person is wearing vivid pink socks, and the car&#x27;s side mirror and body panel are visible in the lower part of the frame. Salient objects include 2 legs/feet, 2 pink socks, 1 blue car, 1 side mirror, and the sky. There is no clearly visible text.
+</pre></div>
+</article>
+</main></body></html>
