@@ -1,0 +1,58 @@
+suite_name: adacycle_full_paper_suite
+output_dir: evaluation/results/adacycle_full_suite
+benchmarks:
+  - name: MME
+    task: multimodal_understanding
+    metrics: [perception, cognition, total]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark MME --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/MME_metrics.json"
+  - name: POPE
+    task: hallucination
+    metrics: [accuracy, precision, recall, f1]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark POPE --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/POPE_metrics.json"
+  - name: SEED-Bench
+    task: multimodal_understanding
+    metrics: [accuracy]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark SEED-Bench --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/SEED-Bench_metrics.json"
+  - name: VQAv2
+    task: visual_question_answering
+    metrics: [accuracy]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark VQAv2 --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/VQAv2_metrics.json"
+  - name: GQA
+    task: visual_question_answering
+    metrics: [accuracy]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark GQA --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/GQA_metrics.json"
+  - name: GenEval
+    task: text_to_image
+    metrics: [overall, single_object, two_object, counting, colors, position, color_attr]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark GenEval --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/GenEval_metrics.json"
+  - name: T2I-CompBench
+    task: text_to_image_compositionality
+    metrics: [color, shape, texture, spatial, non_spatial, complex]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark T2I-CompBench --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/T2I-CompBench_metrics.json"
+  - name: MJHQ
+    task: text_to_image_quality
+    metrics: [fid, clip_score, aesthetics]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark MJHQ --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/MJHQ_metrics.json"
+  - name: MagicBrush
+    task: image_editing
+    metrics: [clip_i, clip_t, l1, lpips, dino]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark MagicBrush --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/MagicBrush_metrics.json"
+  - name: EditBench
+    task: image_editing
+    metrics: [clip_i, clip_t, preservation, instruction_following]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark EditBench --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/EditBench_metrics.json"
+  - name: I2EBench
+    task: image_editing
+    metrics: [edit_success, preservation, semantic_consistency]
+    command: python evaluation/adacycle_benchmark_adapter.py --benchmark I2EBench --metrics-json "$ADACYCLE_METRICS_JSON"
+    metrics_json: "$ADACYCLE_OUTPUT_DIR/I2EBench_metrics.json"
